@@ -1,4 +1,4 @@
-import { world, BlockProperties } from 'mojang-minecraft';
+import { world, BlockLocation } from 'mojang-minecraft';
 
 const DOOR = [
   'minecraft:acacia_door',
