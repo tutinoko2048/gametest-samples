@@ -1,5 +1,15 @@
 import { world, BlockLocation } from 'mojang-minecraft';
 
+/**
+ * Automatic Double swing Door
+ * @license MIT
+ * @author tutinoko2048 / RetoRuto9900K
+ * @version 1.0.0
+ * --------------------------------------------------------------------------
+ * 片方のドアを開くと反対側のドアも開きます
+ * --------------------------------------------------------------------------
+ */
+
 const DOOR = [
   'minecraft:acacia_door',
   'minecraft:birch_door',
