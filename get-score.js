@@ -1,5 +1,7 @@
+import { Entity } from 'mojang-minecraft'
+
 /**
- *
+ * 指定したエンティティのスコアを取得します
  * @param {Entity} entity スコアを取得したいエンティティ
  * @param {string} objective スコアボードの名前
  * @returns {number | null} スコアを持っていない場合はnull
