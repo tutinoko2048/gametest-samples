@@ -5,4 +5,4 @@
 - `@minecraft/server@1.1.0-beta`
 - `@minecraft/server-ui@1.0.0-beta`
   
-[zipファイルとしてダウンロード]()
+[zipファイルとしてダウンロード](https://raw.githubusercontent.com/tutinoko2048/gametest-samples/main/samples/action-form/ScriptAPI-sample-1.19.70.zip)
