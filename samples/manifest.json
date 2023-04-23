@@ -1,0 +1,36 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "ScriptAPI サンプル",
+    "description": "サンプルです。",
+    "uuid": "<生成したUUID>",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 19, 70 ]
+  },
+  "modules": [
+    {
+      "version": [ 1, 0, 0 ],
+      "type": "data",
+      "uuid": "<生成したUUID>",
+      "description": "data module"
+    },
+    {
+      "version": [ 1, 0, 0 ],
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js", // 読み込むファイルへのパス
+      "uuid": "<生成したUUID>",
+      "description": "script module"
+    }
+  ],
+  "dependencies": [ // 使うモジュールを指定する
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.1.0-beta" // バージョンによって変わることがあるので注意
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.0.0-beta" // バージョンによって変わることがあるので注意
+    }
+  ]
+}
