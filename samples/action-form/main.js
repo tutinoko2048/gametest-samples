@@ -42,7 +42,7 @@ async function menu1(player) {
   if (canceled) return; // キャンセルされていたら処理を抜ける
   if (selection === 0) {
     player.sendMessage('ボタン0を選択しました');
-    player.runCommandAsync('say コマンドもつかえるよ');
+    player.runCommand('say コマンドもつかえるよ');
   }
   if (selection === 1) {
     player.sendMessage('ボタン1を選択しました');
