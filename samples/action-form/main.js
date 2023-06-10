@@ -1,5 +1,5 @@
 /**
- * ScriptAPI ActionFormサンプル v1.19.80対応版
+ * ScriptAPI ActionFormサンプル v1.20.0対応版
  * Made by RetoRuto9900K
  */
 
@@ -7,18 +7,18 @@ import { world, Player } from '@minecraft/server';
 import { ActionFormData } from '@minecraft/server-ui';
 
 // 特定のアイテムを使った時にFormを開く例
-world.events.itemUse.subscribe(event => { // アイテムを使用した時に動くイベント
+world.afterEvents.itemUse.subscribe(event => { // アイテムを使用した時に動くイベント
   if (!(event.source instanceof Player)) return; // プレイヤーでなければ処理を抜ける
 
   const player = event.source; // 変数に使った人(Player)を代入
   
-  if (event.item.typeId === 'minecraft:stick') { // 使ったアイテムのtypeIdが棒だったら
+  if (event.itemStack.typeId === 'minecraft:stick') { // 使ったアイテムのtypeIdが棒だったら
     menu1(player).catch(console.error); // Formを表示
   }
 });
 
 // 特定の座標のボタンを押した時にFormを開く例
-world.events.buttonPush.subscribe(event => { // ボタンを押した時に動くイベント
+world.afterEvents.buttonPush.subscribe(event => { // ボタンを押した時に動くイベント
   if (!(event.source instanceof Player)) return; // プレイヤーでなければ処理を抜ける
   
   const block = event.block; // 変数に押されたボタン(Block)を代入
