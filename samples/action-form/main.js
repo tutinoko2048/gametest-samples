@@ -1,5 +1,5 @@
 /**
- * ScriptAPI ActionFormサンプル v1.20.0対応版
+ * ScriptAPI ActionFormサンプル v1.20.10対応版
  * Made by RetoRuto9900K
  */
 
