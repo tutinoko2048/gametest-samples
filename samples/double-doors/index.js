@@ -1,12 +1,11 @@
 // @ts-check
 
-
 import { world } from '@minecraft/server';
 /**
  * Automatic Double swing Door
  * @license MIT
  * @author tutinoko2048 / RetoRuto9900K
- * @version 1.20.0
+ * @version 1.20.10
  * --------------------------------------------------------------------------
  * 片方のドアを開くと反対側のドアも開きます
  * --------------------------------------------------------------------------
@@ -32,19 +31,23 @@ world.afterEvents.itemUseOn.subscribe(ev => {
   if (isUpper === null) return;
   
   const under = { ...location, y: location.y - 1 };
+  const lowerBlock = dimension.getBlock(under);
+  if (!lowerBlock) return;
   
   const isOpen = isUpper
-    ? dimension.getBlock(under).permutation.getState('open_bit')
+    ? lowerBlock.permutation.getState('open_bit')
     : block.permutation.getState('open_bit')
   
   const direction = /** @type { number } */ (isUpper
-    ? dimension.getBlock(under).permutation.getState('direction')
+    ? lowerBlock.permutation.getState('direction')
     : block.permutation.getState('direction'))
 
   if (isOpen === null || direction === null) return;
   
   for (const loc of getNearLocations(isUpper ? under : location, direction)) {
     const _block = dimension.getBlock(loc);
+    if (!_block) continue;
+    
     const _permutation = _block.permutation.clone();
     const _isOpen = _permutation.getState('open_bit'); // ドア操作前の値
     const _direction = _permutation.getState('direction');
