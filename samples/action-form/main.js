@@ -1,5 +1,5 @@
 /**
- * ScriptAPI ActionFormサンプル v1.20.10対応版
+ * ScriptAPI ActionFormサンプル v1.20.30対応版
  * Made by RetoRuto9900K
  */
 
@@ -8,8 +8,6 @@ import { ActionFormData } from '@minecraft/server-ui';
 
 // 特定のアイテムを使った時にFormを開く例
 world.afterEvents.itemUse.subscribe(event => { // アイテムを使用した時に動くイベント
-  if (!(event.source instanceof Player)) return; // プレイヤーでなければ処理を抜ける
-
   const player = event.source; // 変数に使った人(Player)を代入
   
   if (event.itemStack.typeId === 'minecraft:stick') { // 使ったアイテムのtypeIdが棒だったら
