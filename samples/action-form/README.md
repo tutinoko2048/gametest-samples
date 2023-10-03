@@ -1,8 +1,8 @@
 # action-form
 
 対応バージョン
-- `minecraft v1.20.10`
-- `@minecraft/server@1.4.0-beta`
+- `minecraft v1.20.30`
+- `@minecraft/server@1.6.0-beta`
 - `@minecraft/server-ui@1.2.0-beta`
 
 <!--
