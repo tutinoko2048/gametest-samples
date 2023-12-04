@@ -23,15 +23,14 @@ const DOOR = [
   'minecraft:wooden_door'
 ];
 
-world.afterEvents.itemUseOn.subscribe(ev => {
-  const { source: { dimension }, block } = ev;
+world.afterEvents.playerInteractWithBlock.subscribe(ev => {
+  const { block } = ev;
   const location = block.location;
   if (!DOOR.includes(block.typeId)) return;
   const isUpper = block.permutation.getState('upper_block_bit');
   if (isUpper === null) return;
   
-  const under = { ...location, y: location.y - 1 };
-  const lowerBlock = dimension.getBlock(under);
+  const lowerBlock = block.below();
   if (!lowerBlock) return;
   
   const isOpen = isUpper
@@ -45,7 +44,7 @@ world.afterEvents.itemUseOn.subscribe(ev => {
   if (isOpen === null || direction === null) return;
   
   for (const loc of getNearLocations(isUpper ? under : location, direction)) {
-    const _block = dimension.getBlock(loc);
+    const _block = block.dimension.getBlock(loc);
     if (!_block) continue;
     
     const _permutation = _block.permutation.clone();
